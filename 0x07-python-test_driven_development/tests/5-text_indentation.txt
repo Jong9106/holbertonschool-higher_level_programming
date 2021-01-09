@@ -1,0 +1,80 @@
+``5-text_indentation`` module
+================================================================
+
+using  ``5-text_indentation.py``
+
+First import program:
+    >>> __import__('5-text_indentation').__doc__ != None
+    True
+
+Second import function:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    >>> text_indentation.__doc__ != None
+    True
+
+================================================================
+
+For a string:
+    >>> text_indentation("I am Ironman")
+    I am Ironman
+    >>> text_indentation("I am Ironman.")
+    I am Ironman.
+    <BLANKLINE>
+    >>> text_indentation(".I am Ironman")
+    .
+    <BLANKLINE>
+    I am Ironman
+    >>> text_indentation("I am Ironman?")
+    I am Ironman?
+    <BLANKLINE>
+    >>> text_indentation("I am Ironman:")
+    I am Ironman:
+    <BLANKLINE>
+    >>> text_indentation("I am Ironman.I am Ironman:I am Ironman?I am Ironman")
+    I am Ironman.
+    <BLANKLINE>
+    I am Ironman:
+    <BLANKLINE>
+    I am Ironman?
+    <BLANKLINE>
+    I am Ironman
+    >>> text_indentation("?.:")
+    ?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    >>> text_indentation("Hello." "world")
+    Hello.
+    <BLANKLINE>
+    world
+    >>> text_indentation("  H  Hello.   ")
+    H  Hello.
+    <BLANKLINE>
+
+no string:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+    >>> text_indentation((4, "H"))
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Empty arguments:
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+With more than 1 arguments:
+
+    >>> text_indentation("I am Ironman", "I am Ironman")
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
