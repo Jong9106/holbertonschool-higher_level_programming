@@ -5,4 +5,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
     suma = tuple_c[0] + tuple_d[0]
     suma2 = tuple_c[1] + tuple_d[1]
     return (suma, suma2)
- 
