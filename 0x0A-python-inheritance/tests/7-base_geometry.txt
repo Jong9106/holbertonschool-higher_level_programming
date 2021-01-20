@@ -1,0 +1,112 @@
+``BaseGeometry class`` module
+================================================================
+
+using  ``7-base_geometr.py``
+
+First import program:
+    >>> __import__('7-base_geometry').__doc__ != None
+    True
+
+Second import function:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+    >>> BaseGeometry.__doc__ != None
+    True
+
+================================================================
+
+ >>> bg = BaseGeometry()
+    >>> bg.integer_validator("num", 10)
+    >>> bg.integer_validator("width", 98)
+    >>> bg.integer_validator("int", "7")
+    Traceback (most recent call last):
+    ...
+    TypeError: int must be an integer
+
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+    >>> bg.integer_validator("my_num", "Dav")
+    Traceback (most recent call last):
+    ...
+    TypeError: my_num must be an integer
+
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+    >>> bg.integer_validator("distance", -10)
+    Traceback (most recent call last):
+    ...
+    ValueError: distance must be greater than 0
+
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+    >>> bg.integer_validator("Dav", 5)
+
+    >>> bg.integer_validator("date", (5,))
+    Traceback (most recent call last):
+    ...
+    TypeError: date must be an integer
+
+    >>> bg.integer_validator("date", [5])
+    Traceback (most recent call last):
+    ...
+    TypeError: date must be an integer
+
+    >>> bg.integer_validator("int", 'D')
+    Traceback (most recent call last):
+    ...
+    TypeError: int must be an integer
+
+    >>> bg.integer_validator("int", 13.2)
+    Traceback (most recent call last):
+    ...
+    TypeError: int must be an integer
+
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> bg.integer_validator("my_num", -7)
+    Traceback (most recent call last):
+    ...
+    ValueError: my_num must be greater than 0
+
+    >>> bg.integer_validator("my_num", (9,))
+    Traceback (most recent call last):
+    ...
+    TypeError: my_num must be an integer
+
+    >>> bg.integer_validator("my_num", [8])
+    Traceback (most recent call last):
+    ...
+    TypeError: my_num must be an integer
+
+    >>> bg.integer_validator("my_num", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: my_num must be an integer
+
+    >>> bg.integer_validator("my_num", {1, 2})
+    Traceback (most recent call last):
+    ...
+    TypeError: my_num must be an integer
+
+    >>> bg.integer_validator("date", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: date must be an integer
+
+    >>> bg.integer_validator("date", {1,2})
+    Traceback (most recent call last):
+    ...
+    TypeError: date must be an integer
