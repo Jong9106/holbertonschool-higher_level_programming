@@ -6,7 +6,7 @@ class MyInt(int):
     """ A class MyInt that inherits from int """
     
     def __eq__(self, op):
-        return self.value != op
+        return self.real != op
 
     def __ne__(self, op):
-        return self.value == op
+        return self.real == op
