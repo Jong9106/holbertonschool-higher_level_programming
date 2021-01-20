@@ -2,5 +2,5 @@
 """ Module to define a new class """
 
 
-class BaseGeometry:
+class BaseGeometry():
     pass
