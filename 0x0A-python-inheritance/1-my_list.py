@@ -5,11 +5,7 @@ Define a MyList class
 
 
 class MyList(list):
-    """ Class Mylist and print it self sorted"""
-
-    def __init__(self):
-        """ Constructor for MyList class """
-        pass
+    """ Class Mylist and print it self sorted """
 
     def print_sorted(self):
         """ Function to print sorted elements """
