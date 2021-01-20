@@ -11,6 +11,9 @@ Second import function:
 
     >>> MyList = __import__('1-my_list').MyList
 
+    >>> MyList.__doc__ != None
+    True
+
 ================================================================
 
 Adding elements:
