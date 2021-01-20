@@ -3,4 +3,6 @@
 
 
 class BaseGeometry():
+    """ New Class BaseGeometry """
+
     pass
