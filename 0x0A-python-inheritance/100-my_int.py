@@ -4,7 +4,7 @@
 
 class MyInt(int):
     """ A class MyInt that inherits from int """
-    
+
     def __eq__(self, op):
         return self.real != op
 
