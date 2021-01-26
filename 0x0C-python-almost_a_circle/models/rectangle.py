@@ -82,8 +82,15 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """ Magic string representation of a class """
         return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format
                 (self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args):
-        args = (self.id, self.width, self.height, self.x, self.y)
+        """ Public method to update attributes of the class """
+
+        new_args = ['id', 'width', 'height', 'x', 'y']
+
+        if args:
+            for i in range(len(args)):
+                setattr(self, new_args[i], args[i])
