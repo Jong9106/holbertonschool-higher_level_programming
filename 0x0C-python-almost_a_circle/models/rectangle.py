@@ -86,7 +86,7 @@ class Rectangle(Base):
         return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format
                 (self.id, self.x, self.y, self.width, self.height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Public method to update attributes of the class """
 
         new_args = ['id', 'width', 'height', 'x', 'y']
@@ -94,3 +94,7 @@ class Rectangle(Base):
         if args:
             for i in range(len(args)):
                 setattr(self, new_args[i], args[i])
+
+        if kwargs:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
