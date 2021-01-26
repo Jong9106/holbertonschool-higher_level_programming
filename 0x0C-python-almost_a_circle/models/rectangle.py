@@ -10,6 +10,7 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Attributes for Rectangle class """
+
         super().__init__(id)
         self.width = width
         self.height = height
@@ -66,5 +67,12 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """ Public method """
+        """ Public method that define area"""
         return self.__width * self.__height
+
+    def display(self):
+        """ Public method that define display """
+        for i in range(self.height):
+            for j in range(self.width):
+                print('#', end="")
+            print()
