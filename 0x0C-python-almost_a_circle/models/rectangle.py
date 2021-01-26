@@ -72,7 +72,11 @@ class Rectangle(Base):
 
     def display(self):
         """ Public method that define display """
+        for k in range(self.y):
+            print()
         for i in range(self.height):
+            for l in range(self.x):
+                print(" ", end="")
             for j in range(self.width):
                 print('#', end="")
             print()
