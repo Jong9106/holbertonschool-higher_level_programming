@@ -9,7 +9,7 @@ class Rectangle(Base):
     """ New class Rectangle that inheriths from Base class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Constructor """
+        """ Attributes for Rectangle class """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -64,3 +64,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be > 0")
         self.__y = value
+
+    def area(self):
+        """ Public method """
+        return self.__width * self.__height
