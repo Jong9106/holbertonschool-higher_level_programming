@@ -98,3 +98,8 @@ class Rectangle(Base):
         if kwargs:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """ Public method to return a dictionary representation """
+        return {'id': self.id, 'height': self.height, 'width': self.width,
+                'x': self.x, 'y': self.y}
