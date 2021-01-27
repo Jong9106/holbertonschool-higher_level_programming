@@ -11,7 +11,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ Attributes for Square class """
 
-        super().__init__(size, size, x , y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """ Magic string representation of a class """
@@ -26,6 +26,3 @@ class Square(Rectangle):
     def size(self, size):
         self.width = size
         self.height = size
-
-
-
