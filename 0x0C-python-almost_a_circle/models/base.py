@@ -55,4 +55,10 @@ class Base:
 
         return json.loads(json_string)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """ Class method to create a instance with attributes setted"""
 
+        dummy_instance = cls(1, 1, 1)
+        cls.update(dummy_instance, **dictionary)
+        return dummy_instance
