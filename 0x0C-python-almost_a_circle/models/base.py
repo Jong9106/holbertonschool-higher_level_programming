@@ -24,3 +24,35 @@ class Base:
             return json.dumps([])
 
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ Class method to save in json file """
+
+        if list_objs is None:
+            new_list = []
+
+        else:
+            new_list = []
+            for i in list_objs:
+                new_list.append(cls.to_dictionary(i))
+            new_list = Base.to_json_string(new_list)
+
+        with open("{}.json".format(cls.__name__), 'w') as new_file:
+
+            import json
+
+            new_file.write(new_list)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Static method to return a string representation from a json file"""
+
+        if json_string is None or not json_string:
+            return []
+
+        import json
+
+        return json.loads(json_string)
+
+
