@@ -136,7 +136,3 @@ class TestRectangleClass(unittest.TestCase):
         """ Resset module for id """
 
         Base._Base__nb_objects = 0
-
-
-if __name__ == "__main__":
-    unittest.main()
