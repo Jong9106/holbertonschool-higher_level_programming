@@ -86,7 +86,7 @@ class TestBase(unittest.TestCase):
         """
         r1 = Rectangle(10, 7, 2, 8)
         dic = r1.to_dictionary()
-        new_json_dic = {'x': 2, 'width': 10, 'id': 3, 'height': 7, 'y': 8}
+        new_json_dic = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
         json_dic = Base.to_json_string([dic])
         self.assertEqual(dic, new_json_dic)
         self.assertEqual(type(dic), dict)
@@ -122,8 +122,8 @@ class TestBase(unittest.TestCase):
         """
         rec1 = Rectangle(10, 7, 2, 8)
         rec2 = Rectangle(2, 4)
-        json_dic1 = {"id": 4, "height": 7, "width": 10, "y": 8, "x": 2}
-        json_dic2 = {"id": 5, "height": 4, "width": 2, "y": 0, "x": 0}
+        json_dic1 = {"id": 1, "height": 7, "width": 10, "y": 8, "x": 2}
+        json_dic2 = {"id": 2, "height": 4, "width": 2, "y": 0, "x": 0}
         Rectangle.save_to_file([rec1, rec2])
         with open("Rectangle.json", 'r') as file:
             self.assertEqual(type(file.read()), str)
@@ -136,8 +136,8 @@ class TestBase(unittest.TestCase):
         """
         squ1 = Square(10, 2, 8)
         squ2 = Square(2, 4)
-        json_dic1 = {"id": 6, "size": 10, "y": 8, "x": 2}
-        json_dic2 = {"y": 0, "id": 7, "x": 4, "size": 2}
+        json_dic1 = {"id": 1, "size": 10, "y": 8, "x": 2}
+        json_dic2 = {"y": 0, "id": 2, "x": 4, "size": 2}
         Square.save_to_file([squ1, squ2])
         with open("Square.json", 'r') as file:
             self.assertEqual(type(file.read()), str)
@@ -171,6 +171,11 @@ class TestBase(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             r = Base(2, 3, 23, 12, 234, 4)
+
+    def tearDown(self):
+        """ Resset module for id """
+
+        Base._Base__nb_objects = 0
 
 
 if __name__ == "__main__":

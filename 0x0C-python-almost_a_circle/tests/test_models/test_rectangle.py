@@ -19,7 +19,7 @@ class TestRectangleClass(unittest.TestCase):
         Testing valid id
         """
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 15)
+        self.assertEqual(r1.id, 1)
 
     def test_display(self):
         """
@@ -38,9 +38,9 @@ class TestRectangleClass(unittest.TestCase):
         Testing valid ids
         """
         r2 = Rectangle(32, 2)
-        self.assertEqual(r2.id, 16)
+        self.assertEqual(r2.id, 1)
         r3 = Rectangle(7, 2)
-        self.assertEqual(r3.id, 17)
+        self.assertEqual(r3.id, 2)
         r4 = Rectangle(32, 3, 0, 0, 77)
         self.assertEqual(r4.id, 77)
 
@@ -67,7 +67,7 @@ class TestRectangleClass(unittest.TestCase):
         """
         r8 = Rectangle(32, 32, 13)
         self.assertEqual([r8.width, r8.height, r8.x, r8.y, r8.id],
-                         [32, 32, 13, 0, 19])
+                         [32, 32, 13, 0, 1])
 
     def test_params_setters(self):
         """
@@ -131,6 +131,11 @@ class TestRectangleClass(unittest.TestCase):
             Rectangle(10, 10, 2, -3)
         except err as e:
             self.assertEqual((str(e)), "y" + errormsg)
+
+    def tearDown(self):
+        """ Resset module for id """
+
+        Base._Base__nb_objects = 0
 
 
 if __name__ == "__main__":

@@ -229,6 +229,11 @@ class TestSquare(unittest.TestCase):
         t1 = Square(10, 2, 1, 1)
         self.assertEqual(dic, t1.to_dictionary())
 
+    def tearDown(self):
+        """ Resset module for id """
+
+        Base._Base__nb_objects = 0
+
 
 if __name__ == "__main__":
     unittest.main()
