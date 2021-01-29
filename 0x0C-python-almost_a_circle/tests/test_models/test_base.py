@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Unittest for base.py"""
+"""Unittest for Base class"""
 
 import unittest
 import json
@@ -11,13 +11,9 @@ from models.square import Square
 
 
 class TestBase(unittest.TestCase):
-    """
-    Define TestBase class
-    """
+    """ Define TestBase class """
     def test_A_documentation(self):
-        """
-        test class Base documentation in methods and functions
-        """
+        """ test class Base documentation in methods and functions """
         self.assertTrue(len(Base.__doc__) > 0)
         func = inspect.getmembers(Base, predicate=inspect.ismethod)
         for name, method in func:
@@ -41,6 +37,11 @@ class TestBase(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['tests/test_models/test_base.py'])
         self.assertEqual(result.total_errors, 0, "Found code style errors")
+
+    def test_private_class(self):
+        """ here de documentation """
+        with self.assertRaises(AttributeError):
+            print(Base.__nb_objects)
 
     def test_D_creating_instances(self):
         """
