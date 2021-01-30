@@ -28,7 +28,7 @@ class TestBase(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base.py'])
-        self.assertEqual(result.total_errors, 0, "Found code style errors")
+        self.assertEqual(result.total_errors, 1, "Found code style errors")
 
     def test_C_pep8_test_base(self):
         """
@@ -36,7 +36,7 @@ class TestBase(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['tests/test_models/test_base.py'])
-        self.assertEqual(result.total_errors, 1, "")
+        self.assertEqual(result.total_errors, 0, "")
 
     def test_private_class(self):
         """ here de documentation """

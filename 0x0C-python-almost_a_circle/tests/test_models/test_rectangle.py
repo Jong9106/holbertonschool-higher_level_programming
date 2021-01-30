@@ -130,6 +130,7 @@ class TestRectangleClass(unittest.TestCase):
         try:
             Rectangle(10, 10, 2, -3)
         except err as e:
+            errormsg = " must be > 0"
             self.assertEqual((str(e)), "y" + errormsg)
 
     def tearDown(self):

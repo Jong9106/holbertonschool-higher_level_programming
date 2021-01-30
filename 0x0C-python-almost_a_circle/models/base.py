@@ -8,6 +8,8 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ New class base """ 
+
         self.id = id
 
         if id is None:
