@@ -6,6 +6,7 @@ from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
 
+
 class State(Base):
     """ New class thta define State than inherits from Base """
 
