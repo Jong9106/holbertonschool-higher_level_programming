@@ -15,7 +15,7 @@ if __name__ == "__main__":
         host="localhost", port=3306, user=user_name,
         passwd=password, db=data_base, charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name=%s ",(state_name,))
+    cur.execute("SELECT * FROM states WHERE name=%s ", (state_name,))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
