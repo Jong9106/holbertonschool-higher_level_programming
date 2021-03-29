@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module that define a new class """ 
+""" Module that define a new class """
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
