@@ -23,7 +23,7 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).\
-        filter(State.name == argv[4]).order_by(State.id).all()
+        filter(State.name == state_name).order_by(State.id).all()
     if states:
         print("{}".format(states[0].id))
     else:
