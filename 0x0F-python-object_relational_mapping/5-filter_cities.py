@@ -29,7 +29,7 @@ if __name__ == "__main__":
                 print(', ', end="")
     except:
         pass
-        print()
+    print()
 
     cur.close()
     conn.close()
