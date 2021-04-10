@@ -1,3 +1,3 @@
 #!/bin/bash
-#script that takes in a URL, and displays the size of the body
-curl [options / URLs]
+#script that takes in a URL, sends a GET and displays the body
+curl _Ls "$1"
