@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
-Python script that fetches https://intranet.hbtn.io/status
+Python script that print https://intranet.hbtn.io/status
 """
 
 import urllib.request
 import sys
 
-with urllib.request.urlopen(sys.argv[1]) as urlresponse:
-    id_rsp = urlresponse.info()['X-Request-Id']
-    print(id_rsp)
+if __name__ == "__main__":
+
+    with urllib.request.urlopen(sys.argv[1]) as urlresponse:
+        id_rsp = urlresponse.info()['X-Request-Id']
+        print(id_rsp)
