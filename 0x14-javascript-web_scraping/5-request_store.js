@@ -11,7 +11,7 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     const data = JSON.parse(body);
-    fs.writeFile(fileName, data, (err) =>{
+    fs.writeFile(fileName, data, (err) => {
       if (err) throw err;
     });
   }
