@@ -12,7 +12,7 @@ request(url, function (error, response, body) {
   } else {
     const data = JSON.parse(body);
     fs.writeFile(fileName, data, (err) => {
-      if (err) throw err;
+      if (err) return console.log(err);
     });
   }
 });
