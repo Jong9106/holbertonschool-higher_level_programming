@@ -8,10 +8,9 @@ const fileName = argv[3];
 
 request(url, function (error, response, body) {
   if (error) {
-    console.log(error);
+    console.error('error:', error);
   } else {
-    const data = JSON.parse(body);
-    fs.writeFile(fileName, data, (err) => {
+    fs.writeFile(fileName, body, 'utf8', function (err) {
       if (err) return console.log(err);
     });
   }
