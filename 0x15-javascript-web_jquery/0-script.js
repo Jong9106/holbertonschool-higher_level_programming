@@ -1,3 +1,4 @@
-let text_header = document.querySelector("header");
+const textHeader = document.querySelector('header');
 
-text_header.style.color = "#FF0000"
+textHeader.style.color = '#FF0000'
+;
